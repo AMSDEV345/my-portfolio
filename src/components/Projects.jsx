@@ -3,7 +3,15 @@ import "../style.css";
 
 const projects = [
   {
-    num: "01 — E-Commerce",
+    num: "01 — Portfolio",
+    title: "My Portfolio",
+    desc: "Personal developer portfolio built with React and Vite. Features responsive design, smooth animations, and a clean editorial aesthetic.",
+    tags: ["React", "Vite", "CSS", "Vercel"],
+    live: "https://my-portfolio-ashy-one-47.vercel.app",
+    github: "https://github.com/AMSDEV345/my-portfolio",
+  },
+  {
+    num: "02 — E-Commerce",
     title: "AMS Jersey City",
     desc: "Full-stack football jersey store with product catalogue, cart, order management, and an admin dashboard. 55+ jerseys across all major leagues.",
     tags: ["React", "Node.js", "MongoDB", "Vercel", "Railway"],
@@ -11,7 +19,7 @@ const projects = [
     github: "#",
   },
   {
-    num: "02 — Productivity",
+    num: "03 — Productivity",
     title: "TaskFlow",
     desc: "Task management app with project boards, real-time updates, and user authentication. Built for teams that need a clean, distraction-free workflow.",
     tags: ["React", "Node.js", "MongoDB", "JWT"],
@@ -38,10 +46,10 @@ function Projects() {
               ))}
             </div>
             <div className="project-links">
-              <a href={p.live}>
+              <a href={p.live} target="_blank" rel="noreferrer">
                 <i className="fas fa-arrow-up-right-from-square"></i> Live
               </a>
-              <a href={p.github}>
+              <a href={p.github} target="_blank" rel="noreferrer">
                 <i className="fab fa-github"></i> GitHub
               </a>
             </div>
