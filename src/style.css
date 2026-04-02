@@ -153,3 +153,13 @@
 }
 
 .footer-socials { display: flex; gap: 20px; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .hero-photo-circle {
+    width: 200px;
+    height: 200px;
+  }
+  .hero-photo-ring {
+    inset: -10px;
+  }
+}
