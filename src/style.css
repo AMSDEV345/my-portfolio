@@ -156,32 +156,26 @@
 
 @media (max-width: 768px) {
   .hero-photo-circle {
-    width: 200px;
-    height: 200px;
-  }
-  .hero-photo-ring {
-    inset: -10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-photo-circle {
     width: 150px !important;
     height: 150px !important;
   }
   .hero-photo-ring {
     inset: -8px !important;
   }
+  .hero-photo-wrap {
+    justify-content: flex-start !important;
+    margin: 0 !important;
+  }
   .hero-inner {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
-    text-align: center;
+    text-align: left !important;
   }
   .hero h1 {
     font-size: 42px !important;
   }
   .hero-label {
-    justify-content: center;
+    justify-content: flex-start !important;
   }
   .hero-actions {
     flex-direction: column;
@@ -192,6 +186,12 @@
     justify-content: center;
   }
   .hero-socials {
-    justify-content: center;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+  .hero-socials a {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 11px !important;
   }
 }
