@@ -1,29 +1,86 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../style.css";
+import { gsap } from "gsap";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaTiktok, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Hero() {
+  const heroRef = useRef(null);
+  const photoRef = useRef(null);
+  const labelRef = useRef(null);
+  const titleRef = useRef(null);
+  const roleRef = useRef(null);
+  const descRef = useRef(null);
+  const actionsRef = useRef(null);
+  const socialsRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    tl.fromTo(photoRef.current,
+      { scale: 0, opacity: 0, rotate: -10 },
+      { scale: 1, opacity: 1, rotate: 0, duration: 1 }
+    )
+    .fromTo(labelRef.current,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6 }, "-=0.4"
+    )
+    .fromTo(titleRef.current,
+      { y: 60, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8 }, "-=0.3"
+    )
+    .fromTo(roleRef.current,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6 }, "-=0.3"
+    )
+    .fromTo(descRef.current,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6 }, "-=0.3"
+    )
+    .fromTo(actionsRef.current,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6 }, "-=0.3"
+    )
+    .fromTo(socialsRef.current,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5 }, "-=0.2"
+    );
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (photoRef.current) {
+        photoRef.current.style.transform = `translateY(${scrollY * 0.15}px)`;
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="hero">
+    <section className="hero" ref={heroRef}>
+      <div className="hero-bg-glow"></div>
 
       <div className="hero-inner">
 
-        {/* Left — text */}
+        <div className="hero-photo-wrap" ref={photoRef}>
+          <div className="hero-photo-circle">
+            <img src="/mubarak.jpg" alt="Mubarak Lawal" className="hero-photo" />
+          </div>
+          <div className="hero-photo-ring"></div>
+        </div>
+
         <div className="hero-content">
+          <div className="hero-label" ref={labelRef}>Available for work</div>
 
-          <div className="hero-label">Available for work</div>
+          <h1 ref={titleRef}>Mubarak<br /><em>Lawal</em></h1>
 
-          <h1>
-            Mubarak<br />
-            <em>Lawal</em>
-          </h1>
+          <p className="hero-role" ref={roleRef}>Full-Stack Developer</p>
 
-          <p className="hero-role">Full-Stack Developer</p>
-
-          <p className="hero-desc">
+          <p className="hero-desc" ref={descRef}>
             Building scalable, high-performance web apps with flawless UIs. React, Node.js, MongoDB.
           </p>
 
-          <div className="hero-actions">
+          <div className="hero-actions" ref={actionsRef}>
             <a href="#projects" className="btn-primary">
               <i className="fas fa-arrow-down"></i> View Work
             </a>
@@ -32,37 +89,14 @@ function Hero() {
             </a>
           </div>
 
-          <div className="hero-socials">
-            <a href="https://github.com/AMSDEV345" title="GitHub">
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ams-muzee-9b39873a8?utm_source=share_via&utm_content=profile&utm_medium=member_ios" title="LinkedIn">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/amsdev00?igsh=MWUzczdhdjcwNjB5eg%3D%3D&utm_source=qr" title="Instagram">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@muzeedev" title="TikTok">
-              <i className="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.facebook.com/share/1AxLbUHfzS/?mibextid=wwXIfr" title="Facebook">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://x.com/ams_dev2?s=21" title="X">
-              <i className="fab fa-x-twitter"></i>
-            </a>
-            <a href="https://wa.me/2348128425129" title="WhatsApp">
-              <i className="fab fa-whatsapp"></i>
-            </a>
-          </div>
-
-        </div>
-
-        {/* Right — photo */}
-        <div className="hero-photo-wrap">
-          <div className="hero-photo-frame">
-            <img src="/mubarak.jpg" alt="Mubarak Lawal" className="hero-photo" />
-            <div className="hero-photo-glow"></div>
+          <div className="hero-socials" ref={socialsRef}>
+            <a href="https://github.com/AMSDEV345"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/ams-muzee-9b39873a8"><FaLinkedinIn /></a>
+            <a href="https://www.instagram.com/amsdev00"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@muzeedev"><FaTiktok /></a>
+            <a href="https://www.facebook.com/share/1AxLbUHfzS/"><FaFacebookF /></a>
+            <a href="https://x.com/ams_dev2"><FaXTwitter /></a>
+            <a href="https://wa.me/2348128425129"><FaWhatsapp /></a>
           </div>
         </div>
 
