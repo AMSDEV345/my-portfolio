@@ -163,3 +163,35 @@
     inset: -10px;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-photo-circle {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .hero-photo-ring {
+    inset: -8px !important;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 42px !important;
+  }
+  .hero-label {
+    justify-content: center;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-primary, .btn-outline {
+    width: 100% !important;
+    justify-content: center;
+  }
+  .hero-socials {
+    justify-content: center;
+  }
+}
