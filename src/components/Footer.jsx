@@ -20,10 +20,10 @@ function Footer() {
           <a href="https://github.com/AMSDEV345" title="GitHub">
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://www.instagram.com/amsdev00?igsh=MWUzczdhdjcwNjB5eg%3D%3D&utm_source=qr" title="Instagram">
+          <a href="https://www.instagram.com/adetech_24?igsi=MWUzczdhdjcwNjB5eg%3D%3D&utm_source=qr" title="Instagram">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://www.tiktok.com/@muzeedev" title="TikTok">
+          <a href="https://www.tiktok.com/@adetechguy" title="TikTok">
             <i className="fab fa-tiktok"></i>
           </a>
           <a href="https://www.facebook.com/share/1AxLbUHfzS/?mibextid=wwXIfr" title="Facebook">
@@ -41,7 +41,7 @@ function Footer() {
       <div className="footer-divider"></div>
 
       <div className="footer-bottom">
-        <p>© 2026 Mubarak Lawal. All rights reserved.</p>
+        <p>©️ 2026 Mubarak Lawal. All rights reserved.</p>
         <div className="footer-links">
           <a href="#projects">Work</a>
           <a href="#skills">Stack</a>

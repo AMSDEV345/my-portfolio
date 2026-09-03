@@ -92,8 +92,8 @@ function Hero() {
           <div className="hero-socials" ref={socialsRef}>
             <a href="https://github.com/AMSDEV345"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/ams-muzee-9b39873a8"><FaLinkedinIn /></a>
-            <a href="https://www.instagram.com/amsdev00"><FaInstagram /></a>
-            <a href="https://www.tiktok.com/@muzeedev"><FaTiktok /></a>
+            <a href="https://www.instagram.com/adetech_24?igsi=MWUzczdhdjcwNjB5eg%3D%3D&utm_source=qr"><FaInstagram /></a>
+            <a href="https://www.tiktok.com/@adetechguy"><FaTiktok /></a>
             <a href="https://www.facebook.com/share/1AxLbUHfzS/"><FaFacebookF /></a>
             <a href="https://x.com/ams_dev2"><FaXTwitter /></a>
             <a href="https://wa.me/2348128425129"><FaWhatsapp /></a>
@@ -106,3 +106,4 @@ function Hero() {
 }
 
 export default Hero;
+
